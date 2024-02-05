@@ -1,0 +1,22 @@
+public class User {
+     userId;
+     name;
+     email;
+     about;
+  private List<Rating> ratings=new ArrayList<>();
+}
+public class Hotel {
+     id;
+     name;
+     location;
+     about;
+}
+public class Rating {
+	 ratingId;
+	 userId;
+	 hotelId;
+	  int rating;
+	 feedback;
+}
+Note:
+Rating table has Hotel Rating which is done by Users, so from Rating we can find out user based rating and hotel based rating.

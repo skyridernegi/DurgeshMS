@@ -1,0 +1,19 @@
+[
+	{
+	"name":"RadissonBlue",
+	"location":"Noida",
+	"about":"Best Hotel in Noida, best food and service"
+	}
+,
+{
+	"name":"Lila",
+	"location":"Delhi",
+	"about":"Costly hotel, but best in everything"
+}
+,
+{
+	"name":"HolydayINN",
+	"location":"Agra",
+	"about":"Economical and good services"
+}
+]

@@ -1,0 +1,21 @@
+[{
+"userId":"23e7178f-9e53-41d9-b5a8-d770399e8f03",
+"hotelId":"192f32ff-2265-4402-b504-a34806c4715b",
+"rating":"9",
+"feedback":"Best Hotel in Noida, best food and service"
+}
+,
+{
+"userId":"4836f799-a676-47f6-9874-e90e22849e82",
+"hotelId":"cc53390c-bf53-4af9-9fc7-7b5418222b39",
+"rating":"7",
+"feedback":"Economical and good services"
+}
+,
+{
+"userId":"4836f799-a676-47f6-9874-e90e22849e82",
+"hotelId":"dc690543-12e3-47e5-bc4b-5fb555836825",
+"rating":"5",
+"feedback":"Costly hotel, but best in everything"
+}
+]
