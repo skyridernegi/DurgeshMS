@@ -6,4 +6,4 @@ spring:
     password: system
     driver-class-name: com.mysql.jdbc.Driver
   application:    name: USER_SERVICE    #if I don’t put application name then in eureka server console applicationName will be presented as UNKWON, we can see in above screenshot of eureka page
-    jpa:    hibernate:      ddl-auto: update    show-sql: true    #eureka:#  client:#    register-with-eureka: true#    fetch-registry: true#    service-url:#      defaultZone: http://localhost:8761/eureka#  instance:#    prefer-ip-address: true  
+    jpa:    hibernate:      ddl-auto: update    show-sql: true    eureka:  client:    register-with-eureka: true    fetch-registry: true    service-url:      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}  instance:    prefer-ip-address: true  #eureka:# client:#    service-url:#       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

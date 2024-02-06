@@ -16,3 +16,13 @@ spring:
 #    register-with-eureka: true
 #    service-url:
 #      defaultZone: http://localhost:8761/eureka
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} 
+      #same as mentioned in ServiceRegistery(EurekaServer application.yml)
+  instance:
+    prefer-ip-address: true

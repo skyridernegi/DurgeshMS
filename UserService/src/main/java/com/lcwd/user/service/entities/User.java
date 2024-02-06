@@ -1,11 +1,11 @@
 package com.lcwd.user.service.entities;
 
-import jakarta.persistence.Entity;
-
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.*;
+//import jakarta.persistence.Table;
 import java.util.List;
+import javax.persistence.*;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name="micro_users")

@@ -1,8 +1,12 @@
 package com.lcwd.hotel.service.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.Id;
+//import jakarta.persistence.Table;
+//above packages work with SpringBoot version 3.2
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

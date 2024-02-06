@@ -1,4 +1,4 @@
-package com.lcwd.serviceregistry;
+package com.lcwd.ServiceRegistry.ServiceRegistry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
