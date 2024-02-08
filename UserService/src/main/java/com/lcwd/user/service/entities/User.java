@@ -1,5 +1,6 @@
 package com.lcwd.user.service.entities;
 
+import java.util.ArrayList;
 //import jakarta.persistence.Entity;
 //import jakarta.persistence.*;
 //import jakarta.persistence.Table;
@@ -23,8 +24,8 @@ public class User {
     @Column(name = "ABOUT")
     private String about;
     //other user properties that you want
-//  @Transient
-//  private List<Rating> ratings=new ArrayList<>();
+  @Transient
+  private List<Rating> ratings=new ArrayList<>();
 
 	public String getUserId() {
 		return userId;
@@ -58,8 +59,17 @@ public class User {
 		this.about = about;
 	}
 	
+	public List<Rating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<Rating> ratings) {
+		this.ratings = ratings;
+	}
+
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", about=" + about + "]";
+		return "User [userId=" + userId + ", name=" + name + ", email=" + email + ", about=" + about + ", ratings="
+				+ ratings + "]";
 	}
 }

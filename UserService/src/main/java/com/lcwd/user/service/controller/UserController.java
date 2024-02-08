@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import com.lcwd.user.service.entities.Rating;
 import com.lcwd.user.service.entities.User;
 import com.lcwd.user.service.services.impl.UserServiceImpl;
 
@@ -22,6 +24,7 @@ public class UserController {
 
 	@Autowired
 	UserServiceImpl userService;
+	
 	//create user
     //create
 //    @PostMapping("/create")
@@ -40,10 +43,13 @@ public class UserController {
 //	}
 	//get single user
 	@GetMapping("{userId}")
-	public ResponseEntity<Optional<User>> getUser(@PathVariable  String userId){
+//	public ResponseEntity<Optional<User>> getUser(@PathVariable  String userId){
+	public ResponseEntity<User> getUser(@PathVariable  String userId){
 		
 		System.out.println("omsairam .. getUser:"+userId+" invoked");
-		Optional<User> user=userService.getUser(userId);
+		//Optional<User> user=userService.getUser(userId);
+		User user=userService.getUser(userId);
+		
 		return ResponseEntity.ok(user);
 	}
 	//get all users

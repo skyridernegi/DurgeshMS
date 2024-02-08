@@ -16,7 +16,8 @@ public interface UserService {
 
     //get single user of given userId
 
-    Optional<User> getUser(String userId);
+//    Optional<User> getUser(String userId);
+    User getUser(String userId);
 
     //TODO: delete
     //TODO: update
