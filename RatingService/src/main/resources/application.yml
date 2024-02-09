@@ -8,6 +8,17 @@ spring:
       database: rating_ms
   application:
     name: RATING-SERVICE
+
+  jpa:
+    properties:
+      :hibernate:
+        format_sql: true
+#spring.jpa.properties.hibernate.format_sql
+#  jpa:
+#    show-sql: true
+#    properties:
+#      hibernate
+#       
 #eureka:
 #  instance:
 #    prefer-ip-address: true
