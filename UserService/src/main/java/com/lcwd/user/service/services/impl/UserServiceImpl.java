@@ -16,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import com.lcwd.user.service.entities.Hotel;
 import com.lcwd.user.service.entities.Rating;
 import com.lcwd.user.service.entities.User;
+import com.lcwd.user.service.external.service.HotelService;
 import com.lcwd.user.service.repositories.UserRepository;
 import com.lcwd.user.service.services.UserService;
 //import com.sun.org.slf4j.internal.LoggerFactory;
@@ -23,6 +24,10 @@ import com.lcwd.user.service.services.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
+	//feignClient Service Interface
+	@Autowired
+	HotelService hotelServiceFC;
+	
 	@Autowired
 	private RestTemplate restTemplate;
 	
@@ -66,12 +71,18 @@ public class UserServiceImpl implements UserService{
 		List<Rating> ratingList =
 		Arrays.stream(userRating).map(rating->{
 			
-//			ResponseEntity<Hotel> hotelResponseEntity = restTemplate.getForEntity("http://localhost:8082/hotels/"+rating.getHotelId(), Hotel.class);
+			//ResponseEntity<Hotel> hotelResponseEntity = restTemplate.getForEntity("http://localhost:8082/hotels/"+rating.getHotelId(), Hotel.class);
 			//now we are using directly ServiceName to avoid hardcoded URL/PORT
 			//and to let restTemplate(client) to know about service-name from EurekaServer we have to use @LoadBalanced where we creating bean of RestTemplate
-			ResponseEntity<Hotel> hotelResponseEntity = restTemplate.getForEntity("http://HOTEL-SERVICE/hotels/"+rating.getHotelId(), Hotel.class);
-			Hotel hotel=hotelResponseEntity.getBody();
-			logger.debug("FetchedHotelFromAPIStatus:"+hotelResponseEntity.getStatusCodeValue());
+			
+//			ResponseEntity<Hotel> hotelResponseEntity = restTemplate.getForEntity("http://HOTEL-SERVICE/hotels/"+rating.getHotelId(), Hotel.class);
+//			Hotel hotel=hotelResponseEntity.getBody();
+//			logger.debug("FetchedHotelFromAPIStatus:"+hotelResponseEntity.getStatusCodeValue());
+			
+			//now above 2 78,79 line will be replaced by direct calling of feignClient
+			Hotel hotel= hotelServiceFC.getHotel(rating.getHotelId());
+			logger.info("hotelFromFC_omsairam{}"+hotel);
+			System.out.println("hotelFromFC_omsairam{}"+hotel);
 			logger.debug("FetchedHotelFromAPI:"+hotel);
 			rating.setHotel(hotel);
 			return rating;
